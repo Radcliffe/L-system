@@ -2,7 +2,7 @@ lsystem
 =======
 
 This is a Python class for generating and drawing L-system. An L-system is a
-formal generator that generates fractal curves, such as the *flowsnake* shown below.
+formal grammar that generates fractal curves, such as the *flowsnake* shown below.
 
 ![flowsnake](flowsnake.png)
 
