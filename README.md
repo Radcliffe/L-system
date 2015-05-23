@@ -32,7 +32,7 @@ The instance method `draw` is used to draw the curve. It takes three parameters:
 
 1.  `t` is the turtle object.
 2.  `n` is the number of iterations.
-3.  `step` is the step size in pixels.
+3.  `step` is the step size in pixels (default value is 10).
 4.  `moves` overrides the instance variable of the same name.
 
 

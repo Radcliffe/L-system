@@ -32,8 +32,7 @@ class Lsystem:
     def draw(self, t, n, step=10, moves=None):
         if moves is None:
             moves = self.moves
-        s = self.gen(n)
-        for char in s:
+        for char in self.gen(n):
             action = moves.get(char)
             if action is None: return
             verb = action[0]
