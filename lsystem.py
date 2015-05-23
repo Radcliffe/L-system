@@ -74,4 +74,4 @@ if __name__ == '__main__':
     t.speed(0)
     curve.draw(t, 4, step=8)
     t.hideturtle()
-    x = input("Press Enter to exit.")
+    input("Press Enter to exit.")

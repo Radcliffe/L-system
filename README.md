@@ -8,8 +8,9 @@ formal generator that generates fractal curves, such as the *flowsnake* shown be
 
 ## Requirements
 
-This program runs in Python 2.7 and Python 3.x. It requires the `tkinter`
-and `turtle` packages.
+This program runs in Python 3.x. It will also run in Python 2.7, if you
+substitute `raw_input` for `input` in the last line. The program requires the 
+`tkinter` and `turtle` packages.
 
 ## Usage
 
