@@ -25,6 +25,15 @@ three parameters.
 2. `rules` is a dictionary that contains the rules for rewriting a string.
 3. `moves` (optional) is a dictionary that converts the string into turtle commands.
 
+The draw command understands the following turtle commands:
+
+1.  `Rn` : turn right *n* degrees (default = 90)
+2.  `Ln` : turn left *n* degrees (default = 90)
+3.  `Fn` : move and draw forward *n* steps (default = 1)
+4.  `Mn` : move forward *n* steps without drawing (default = 1)
+5.  `[`  : push the current position and heading onto the stack.
+6.  `]`  : pop the position and heading from the stack.
+
 The instance method `gen(n)` is a generator that yields the *n*th level of the
 curve, one character at a time.
 

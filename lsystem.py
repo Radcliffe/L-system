@@ -17,7 +17,12 @@ class Lsystem:
         self.start = start
         self.rules = rules
         if moves is None:
-            moves = dict(L='L', R='R', F='F', M='M')
+            moves = {'L': 'L', 
+                     'R': 'R', 
+                     'F': 'F', 
+                     'M': 'M',
+                     '[': '[',
+                     ']': ']'}
         self.moves = moves
     
     def gen(self, n):
