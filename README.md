@@ -16,7 +16,7 @@ substitute `raw_input` for `input` in the last line. The program requires the
 
 To see a demo, just type
 
-    $ python lsystem.py
+    $ python3 lsystem.py
 
 The class `Lsystem` constructs a curve from an L-system. The constructor takes
 three parameters.

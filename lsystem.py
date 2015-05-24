@@ -30,11 +30,13 @@ class Lsystem:
                     yield ch
         
     def draw(self, t, n, step=10, moves=None):
+        stack = []
         if moves is None:
             moves = self.moves
         for char in self.gen(n):
+        
             action = moves.get(char)
-            if action is None: return
+            if action is None: continue
             verb = action[0]
             
             if verb in 'MF':
@@ -55,17 +57,34 @@ class Lsystem:
                     t.left(angle)
                 else:
                     t.right(angle)
+                    
+            elif verb == '[':
+                stack.append((t.position(), t.heading()))
+            
+            elif verb == ']':
+                position, heading = stack.pop()
+                t.penup()
+                t.setposition(position)
+                t.setheading(heading)
+                t.pendown()
     
         
 def flowsnake():
+    start = 'A'
     rules = dict(A = 'A-B--B+A++AA+B-',
                  B = '+A-BB--B-A++A+B')
     moves = {'A': 'F',
              'B': 'F',
              '+': 'R60',
              '-': 'L60'}
-    return Lsystem('A', rules, moves)
-       
+    return Lsystem(start, rules, moves)
+
+def fractalplant():
+    start = 'X'
+    rules = {'X': 'F-[[X]+X]+F[+FX]-X', 'F': 'FF'}
+    moves = {'F': 'F', '-': 'L25', '+': 'R25', '[': '[', ']': ']'}
+    return Lsystem(start, rules, moves)
+           
 if __name__ == '__main__':
     curve = flowsnake()
     t = turtle.Turtle()
